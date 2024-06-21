@@ -87,7 +87,9 @@ const Home = () => {
     <div className="px-4 md:px-12 lg:px-36 py-10">
       <Toaster />
       <div className="flex flex-wrap justify-between items-center border-b-2 py-3">
-        <h1 className="text-2xl font-semibold text-gray-700 mb-6 md:mb-0">Recipe List</h1>
+        <h1 className="text-2xl font-semibold text-gray-700 mb-6 md:mb-0">
+          Recipe List
+        </h1>
         <form onSubmit={handleSearch} className="flex mb-2 md:mb-0">
           <input
             type="text"
@@ -122,12 +124,21 @@ const Home = () => {
           >
             Add category
           </button>
-          <button
-            onClick={() => navigate("/add-recipe")}
-            className="bg-blue-900 text-white font-semibold py-2 px-3 rounded"
-          >
-            Add recipe
-          </button>
+          {categories.length === 0 ? (
+            <button
+              onClick={() => navigate("/add-category")}
+              className="bg-blue-900 text-white font-semibold py-2 px-3 rounded"
+            >
+              Add recipe
+            </button>
+          ) : (
+            <button
+              onClick={() => navigate("/add-recipe")}
+              className="bg-blue-900 text-white font-semibold py-2 px-3 rounded"
+            >
+              Add recipe
+            </button>
+          )}
         </div>
       </div>
       <div className="py-3">

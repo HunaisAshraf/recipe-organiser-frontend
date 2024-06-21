@@ -60,9 +60,7 @@ const AddRecipe = () => {
 
   useEffect(() => {
     getCategroy();
-    if(categories.length === 0){
-      navigate("/add-category")
-    }
+    
   }, []);
 
 
