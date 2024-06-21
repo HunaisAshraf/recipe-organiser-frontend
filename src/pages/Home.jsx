@@ -42,7 +42,7 @@ const Home = () => {
         `/api/recipe/delete-recipe/${id}`
       );
       if (data.success) {
-        toast.success("recipe deleted successfully");
+        toast.success("Recipe deleted successfully");
         getData();
       }
     } catch (error) {
@@ -92,7 +92,7 @@ const Home = () => {
           <input
             type="text"
             placeholder="Search"
-            className="border-2 py-2 px-3 rounded-l-full md:w-full "
+            className="border-2 py-2 px-3 rounded-l-full sm:w-auto md:w-64"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
@@ -105,7 +105,7 @@ const Home = () => {
           name=""
           id=""
           onChange={handleFilter}
-          className="p-3 outline-none rounded-md bg-blue-900 text-white font-semibold mb-2 md:mb-0 w-full"
+          className="p-3 outline-none rounded-md bg-blue-900 text-white font-semibold mb-2 md:mb-0 w-full md:w-auto"
         >
           <option value="">Select category</option>
           {categories.map((category) => (
@@ -115,7 +115,7 @@ const Home = () => {
           ))}
         </select>
 
-        <div className="flex space-x-2">
+        <div className="flex justify-center space-x-4 ">
           <button
             onClick={() => navigate("/add-category")}
             className="bg-blue-900 text-white font-semibold py-2 px-3 rounded"
@@ -136,7 +136,7 @@ const Home = () => {
             No Recipes found
           </div>
         )}
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div>
           {recipes &&
             recipes.map((recipe) => (
               <RecipeCard
