@@ -60,7 +60,12 @@ const AddRecipe = () => {
 
   useEffect(() => {
     getCategroy();
+    if(categories.length === 0){
+      navigate("/add-category")
+    }
   }, []);
+
+
 
   return (
     <div className="flex justify-center">
